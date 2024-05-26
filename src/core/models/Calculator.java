@@ -6,7 +6,7 @@ package core.models;
 
 /**
  *
- * @author edangulo
+ * @author Robert Lindado y Sebastian Vizcaino
  */
 public class Calculator {
     

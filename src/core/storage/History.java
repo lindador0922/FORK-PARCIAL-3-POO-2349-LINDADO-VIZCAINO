@@ -9,32 +9,23 @@ import java.util.ArrayList;
 
 /**
  *
- * @author edangulo
+ * @author Robert Lindado y Sebastian Vizcaino
  */
 public class History {
-    
-    // Instancia Singleton
-    private static History instance;
-    
+
     // Atributos del Storage
     private ArrayList<Operation> operations;
-    
-    private History() {
+
+    public History() {
         this.operations = new ArrayList<>();
     }
-    
-    public static History getInstance() {
-        if (instance == null) {
-            instance = new History();
-        }
-        return instance;
-    }
-    
-    public void addOperation(Operation operation) {
-        this.operations.add(operation);
-    }
-    
+
     public ArrayList<Operation> getOperations() {
         return operations;
     }
+
+    public void addOperation(Operation operation) {
+        this.operations.add(operation);
+    }
+
 }

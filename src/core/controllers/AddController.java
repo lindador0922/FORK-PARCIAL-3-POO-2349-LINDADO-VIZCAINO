@@ -10,6 +10,7 @@ import core.models.Calculator;
 import core.models.Operation;
 import java.text.DecimalFormat;
 import core.storage.History;
+import core.storage.HistoryInstance;
 
 /**
  *
@@ -52,7 +53,7 @@ public class AddController {
             }
 
             /* GENERAR HISTORIAL */
-            History history = History.getInstance();
+            History history = HistoryInstance.getInstance();
             history.addOperation(new Operation(number1, number2, "+", result));
 
             return new Response("Numbers added", Status.OK, result);

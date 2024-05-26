@@ -7,9 +7,10 @@ package core.controllers;
 import core.controllers.utils.Response;
 import core.controllers.utils.Status;
 import core.models.Operation;
+import core.storage.History;
 import java.util.ArrayList;
 import java.util.Collections;
-import core.storage.History;
+import core.storage.HistoryInstance;
 
 /**
  *
@@ -18,7 +19,7 @@ import core.storage.History;
 public class UpdateController {
         public static Response readHistory() {
         try {
-            History history = History.getInstance();
+            History history = HistoryInstance.getInstance();
             
             // Historial por orden de antiguedad (mas recientes primero)
             ArrayList<Operation> recentHistory = new ArrayList<>(history.getOperations());
