@@ -9,8 +9,8 @@ package core.storage;
  * @author Robert Lindado y Sebastian Vizcaino
  */
 public class HistoryInstance {
-
     // Instancia Singleton
+
     private static History instance;
 
     public static History getInstance() {

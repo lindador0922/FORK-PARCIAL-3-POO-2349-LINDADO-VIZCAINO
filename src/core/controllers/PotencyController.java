@@ -12,6 +12,7 @@ import java.text.DecimalFormat;
 import core.storage.History;
 import core.storage.HistoryInstance;
 
+
 /**
  *
  * @author Robert Lindado y Sebastian Vizcaino

@@ -4,10 +4,8 @@
  */
 package core.views;
 
-
 import core.models.Calculator;
 import core.storage.History;
-
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -315,7 +313,7 @@ public class CalculatorFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_divideButton4ActionPerformed
 
     private void potencyButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_potencyButton5ActionPerformed
-            // TODO add your handling code here:
+        // TODO add your handling code here:
         String number1 = number1TextField1.getText();
         String number2 = number2TextField2.getText();
 
@@ -345,7 +343,6 @@ public class CalculatorFrame extends javax.swing.JFrame {
 
     private void updateButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButton7ActionPerformed
         // TODO add your handling code here:
-        ArrayList<Operation> operationHistory = this.history.getOperations();
         Response response = UpdateController.readHistory();
 
         int status = response.getStatus();

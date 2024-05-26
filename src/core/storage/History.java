@@ -12,9 +12,7 @@ import java.util.ArrayList;
  * @author Robert Lindado y Sebastian Vizcaino
  */
 public class History {
-
-    // Atributos del Storage
-    private ArrayList<Operation> operations;
+     private ArrayList<Operation> operations;
 
     public History() {
         this.operations = new ArrayList<>();
@@ -27,5 +25,4 @@ public class History {
     public void addOperation(Operation operation) {
         this.operations.add(operation);
     }
-
 }
