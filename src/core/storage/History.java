@@ -13,18 +13,28 @@ import java.util.ArrayList;
  */
 public class History {
     
+    // Instancia Singleton
+    private static History instance;
+    
+    // Atributos del Storage
     private ArrayList<Operation> operations;
-
-    public History() {
+    
+    private History() {
         this.operations = new ArrayList<>();
+    }
+    
+    public static History getInstance() {
+        if (instance == null) {
+            instance = new History();
+        }
+        return instance;
     }
     
     public void addOperation(Operation operation) {
         this.operations.add(operation);
     }
-
+    
     public ArrayList<Operation> getOperations() {
         return operations;
     }
-    
 }

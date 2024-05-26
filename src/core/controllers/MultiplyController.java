@@ -9,6 +9,7 @@ import core.controllers.utils.Status;
 import core.models.Calculator;
 import core.models.Operation;
 import java.text.DecimalFormat;
+import core.storage.History;
 
 /**
  *

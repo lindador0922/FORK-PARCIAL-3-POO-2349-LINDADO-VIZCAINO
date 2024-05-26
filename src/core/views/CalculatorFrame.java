@@ -15,12 +15,13 @@ import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 import core.controllers.AddController;
-import core.controllers.CalculatorController;
 import core.controllers.SubtractController;
 import core.controllers.MultiplyController;
 import core.controllers.DivideController;
 import core.controllers.PotencyController;
 import core.controllers.UpdateController;
+
+import core.storage.History;
 import core.controllers.utils.Response;
 import core.models.Operation;
 
@@ -36,7 +37,6 @@ public class CalculatorFrame extends javax.swing.JFrame {
      * Creates new form Calculator
      */
     public CalculatorFrame() {
-        this.history = new History();
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -64,7 +64,7 @@ public class CalculatorFrame extends javax.swing.JFrame {
         L3Title = new javax.swing.JLabel();
         L4Title = new javax.swing.JLabel();
         historyScrollPanel = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        historyList = new javax.swing.JList<>();
         resultTextField3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -141,9 +141,9 @@ public class CalculatorFrame extends javax.swing.JFrame {
         L4Title.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         L4Title.setText("Result");
 
-        jList1.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
-        jList1.setEnabled(false);
-        historyScrollPanel.setViewportView(jList1);
+        historyList.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        historyList.setEnabled(false);
+        historyScrollPanel.setViewportView(historyList);
 
         resultTextField3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         resultTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -345,7 +345,7 @@ public class CalculatorFrame extends javax.swing.JFrame {
 
     private void updateButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButton7ActionPerformed
         // TODO add your handling code here:
-        //ArrayList<Operation> operationHistory = this.history.getOperations();
+        ArrayList<Operation> operationHistory = this.history.getOperations();
         Response response = UpdateController.readHistory();
 
         int status = response.getStatus();
@@ -375,8 +375,8 @@ public class CalculatorFrame extends javax.swing.JFrame {
     private javax.swing.JButton addButton1;
     private javax.swing.JButton clearButton6;
     private javax.swing.JButton divideButton4;
+    private javax.swing.JList<String> historyList;
     private javax.swing.JScrollPane historyScrollPanel;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JButton multiplyButton3;
     private javax.swing.JTextField number1TextField1;
     private javax.swing.JTextField number2TextField2;
